@@ -1,0 +1,42 @@
+
+Bump verison
+-----------------------
+Config.xml & check minsdk
+
+
+Remove plugin
+-----------------------
+cordova plugin rm org.apache.cordova.console
+
+
+Build
+----------------------------------
+ionic build android --release
+
+
+Copy
+------------------------------------
+cp platforms/android/build/outputs/apk/android-release-unsigned.apk release/android-release-unsigned.apk
+
+
+Key Info (one time)
+------------------------
+keytool -genkey -v -keystore com.optimus.release.keystore -alias com.optimus -keyalg RSA -keysize 2048 -validity 10000
+
+keystore & keypassword: optimusapp
+
+
+Jarsigning
+------------------------------
+jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore com.optimus.release.keystore release/android-release-unsigned.apk com.optimus
+
+
+Zipalign
+--------------------------------
+./zipalign -v 4 release/android-release-unsigned.apk release/optimus_RELEASE_1.0.1.apk
+
+
+Facebook Hash
+---------------
+keytool -exportcert -alias com.optimus -keystore com.optimus.release.keystore | openssl sha1 -binary | openssl base64
+IHNAnTQ5WHTlQlKxUrE8XDWUG8c=
