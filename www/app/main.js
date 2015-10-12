@@ -1,7 +1,11 @@
 (function () {
   var app = angular.module('optimus', [
     'ionic',
-    'optimus.auth'
+    'optimus.auth',
+    'optimus.wish',
+    'optimus.category',
+    'optimus.comment',
+    'optimus.bookmark'
   ])
 
   app.run(function($ionicPlatform) {
@@ -34,6 +38,8 @@
   	});
 
   })
+
+  app.constant("REST_BASE_URL","http://localhost:1337");
 
 
 })()

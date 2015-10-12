@@ -1,7 +1,7 @@
 (function(){
   var app = angular.module('optimus.auth');
 
-  app.controller('RegisterCtrl',['$scope', function($scope){
+  app.controller('RegisterCtrl',['$scope','AuthService', function($scope,AuthService){
     console.log('RegisterCtrl called');
 
     $scope.user = {};
@@ -21,6 +21,13 @@
 
     $scope.register = function(user) {
       console.log(user);
+      AuthService.register(user)
+      .then(function(response) {
+        console.log(response);
+      })
+      .catch(function(err) {
+        console.log(err);
+      })
     }
 
     $scope.loginWithFB = function() {

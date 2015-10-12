@@ -18,6 +18,12 @@
 			controller: "RegisterCtrl",
 			cache:false
 		})
+    .state('app.auth.login', {
+			url: "/login",
+			templateUrl: "app/auth/login.tpl.html",
+			controller: "LoginCtrl",
+			cache:false
+		})
 	})
 
 })()

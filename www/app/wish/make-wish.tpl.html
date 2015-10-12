@@ -1,0 +1,43 @@
+<div class="list list-inset">
+  <label class="item item-input">
+    <input ng-model="wish.name" type="text" placeholder="Name your app">
+  </label>
+  <label class="item item-input">
+    <!-- <div class="input-label">
+      Lightsaber
+    </div> -->
+    <select ng-model="wish.category" ng-options="category.name for category in categories">
+      <option selected value="">Choose a Category</option>
+    </select>
+  </label>
+  <label class="item item-input">
+    <input ng-model="wish.short_description" type="text" placeholder="One liner for your app">
+  </label>
+  <label class="item item-input">
+    <textarea ng-model="wish.long_description" placeholder="Describe your app"></textarea>
+  </label>
+
+  <ul class="list">
+    <li class="item item-checkbox">
+       <label class="checkbox">
+         <input ng-model="wish.platform.ios" type="checkbox">
+       </label>
+       iOS
+    </li>
+    <li class="item item-checkbox">
+       <label class="checkbox">
+         <input ng-model="wish.platform.android" type="checkbox">
+       </label>
+       Android
+    </li>
+    <li class="item item-checkbox">
+       <label class="checkbox">
+         <input ng-model="wish.platform.web" type="checkbox">
+       </label>
+       Web
+    </li>
+  </ul>
+  <button ng-click="makeWish()" class="button button-block button-positive">
+    Make a Wish
+  </button>
+</div>
