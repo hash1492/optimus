@@ -8,17 +8,22 @@
     }
 
     var _getById = function(wish_id) {
-      return WishDataService.getById();
+      return WishDataService.getById(wish_id);
     }
 
-    var _upvoteDownvoteWish = function(wish_id, upvote_downvote) {
-      return WishDataService.upvoteDownvoteWish(wish_id, upvote_downvote)
+    var _toggleWishUpvote = function(wish_id) {
+      return WishDataService.toggleWishUpvote(wish_id)
+    }
+
+    var _toggleWishDownvote = function(wish_id) {
+      return WishDataService.toggleWishDownvote(wish_id)
     }
 
     return {
       getAll: _getAll,
       getById:_getById,
-      upvoteDownvoteWish: _upvoteDownvoteWish
+      toggleWishUpvote: _toggleWishUpvote
+      toggleWishDownvote: _toggleWishDownvote,
     }
   })
 })()

@@ -12,9 +12,14 @@
       .then(function(response) {
         console.log(response);
         $state.go("app.wish.wish-feed");
-      })
-      .catch(function(err) {
+      }, function(err) {
         console.log(err);
+        if(err.data === "INCORRECT_PASSWORD"){
+          alert("Incorrect Password");
+        }
+        if(err.data === "INCORRECT_EMAIL"){
+          alert("User doesn't exist");
+        }
       })
     }
 

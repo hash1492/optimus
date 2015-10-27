@@ -13,13 +13,21 @@
       return BaseDataService.http_get(url);
     }
 
-    var _upvoteDownvoteWish = function(wish_id, upvote_downvote) {
-      var url = "/wish/upvoteDownvote/" + wish_id + "/" + upvote_downvote;
+    var _toggleWishUpvote = function(wish_id) {
+      var url = "/wish/toggleWishUpvote/" + wish_id;
       return BaseDataService.http_get(url);
     }
+
+    var _toggleWishDownvote = function(wish_id, upvote_downvote) {
+      var url = "/wish/toggleWishDownvote/" + wish_id;
+      return BaseDataService.http_get(url);
+    }
+
     return {
       getAll: _getAll,
-      getById: _getById
+      getById: _getById,
+      toggleWishUpvote: _toggleWishUpvote
+      toggleWishDownvote: _toggleWishDownvote,
     }
   })
 })()

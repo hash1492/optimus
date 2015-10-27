@@ -3,8 +3,8 @@
 
   app.factory("BookmarkDataService", function(BaseDataService) {
 
-    var _toggleBookmark = function(wish_id) {
-      var url = "/bookmark/toggleBookmark/" + wish_id;
+    var _toggleWishBookmark = function(wish_id) {
+      var url = "/bookmark/toggleWishBookmark/" + wish_id;
       return BaseDataService.http_get(url);
     }
 
@@ -14,7 +14,7 @@
     }
 
     return {
-      toggleBookmark: _toggleBookmark,
+      toggleWishBookmark: _toggleWishBookmark,
       getAll: _getAll
     }
   })

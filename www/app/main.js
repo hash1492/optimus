@@ -34,7 +34,7 @@
     // Instead
   	$urlRouterProvider.otherwise(function ($injector) {
   		var $state = $injector.get("$state");
-  		$state.go('app.auth.register');
+  		$state.go('app.auth.login');
   	});
 
   })

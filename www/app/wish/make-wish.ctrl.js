@@ -5,8 +5,18 @@
   function($scope,$stateParams,WishService,CategoryService){
     console.log('MakeWishCtrl called');
 
-    $scope.wish = {};
+    $scope.wish = {
+      upvotes: 0,
+      downvotes: 0,
+      platforms: {
+        ios: false,
+        android: false,
+        web: false
+      },
+      similar_apps: []
+    };
 
+    // Get all categories
     CategoryService.getAll()
     .then(function(response) {
       console.log(response);
@@ -16,8 +26,18 @@
       console.log(err);
     })
 
+
+    // Make the wish
     $scope.makeWish = function() {
       console.log($scope.wish);
+      WishService.create($scope.wish)
+      .then(function(response) {
+        console.log(response);
+        $scope.categories = response.data;
+      })
+      .catch(function(err) {
+        console.log(err);
+      })
     }
 
 

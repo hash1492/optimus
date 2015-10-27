@@ -3,12 +3,12 @@
 
   app.factory("BookmarkService", function(WishDataService) {
 
-    var _toggleBookmark = function(wish_id) {
-      return BookmarkDataService.toggleBookmark(wish_id);
+    var _toggleWishBookmark = function(wish_id) {
+      return BookmarkDataService.toggleWishBookmark(wish_id);
     }
 
     return {
-      toggleBookmark: _toggleBookmark
+      toggleWishBookmark: _toggleWishBookmark
     }
   })
 })()
