@@ -18,6 +18,11 @@
       return BaseDataService.http_get(url);
     }
 
+    var _getMyWishlist = function() {
+      var url = "/wish/getMyWishlist";
+      return BaseDataService.http_get(url);
+    }
+
     var _toggleWishUpvote = function(wish_id) {
       var url = "/upvote/toggleWishUpvote/" + wish_id;
       return BaseDataService.http_get(url);
@@ -32,8 +37,9 @@
       create: _create,
       getAll: _getAll,
       getById: _getById,
+      getMyWishlist: _getMyWishlist,
       toggleWishUpvote: _toggleWishUpvote,
-      toggleWishDownvote: _toggleWishDownvote,
+      toggleWishDownvote: _toggleWishDownvote
     }
   })
 })()

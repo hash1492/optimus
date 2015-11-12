@@ -15,6 +15,10 @@
       return WishDataService.getById(wish_id);
     }
 
+    var _getMyWishlist = function() {
+      return WishDataService.getMyWishlist();
+    }
+
     var _toggleWishUpvote = function(wish_id) {
       return WishDataService.toggleWishUpvote(wish_id)
     }
@@ -27,8 +31,9 @@
       create: _create,
       getAll: _getAll,
       getById:_getById,
+      getMyWishlist: _getMyWishlist,
       toggleWishUpvote: _toggleWishUpvote,
-      toggleWishDownvote: _toggleWishDownvote,
+      toggleWishDownvote: _toggleWishDownvote
     }
   })
 })()

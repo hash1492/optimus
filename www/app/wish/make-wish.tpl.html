@@ -1,40 +1,49 @@
-<div class="list list-inset">
-  <label class="item item-input">
-    <input ng-model="wish.name" type="text" placeholder="Name your app">
-  </label>
-  <label class="item item-input">
-    <select ng-model="wish.category" ng-options="category.name for category in categories">
-      <option selected value="">Choose a Category</option>
-    </select>
-  </label>
-  <label class="item item-input">
-    <input ng-model="wish.short_description" type="text" placeholder="One liner for your app">
-  </label>
-  <label class="item item-input">
-    <textarea ng-model="wish.long_description" placeholder="Describe your app"></textarea>
-  </label>
+<ion-header-bar align-title="left" class="bar-positive">
+  <div class="buttons">
+    <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
+  </div>
+</ion-header-bar>
+<ion-view>
+  <ion-content class="has-header">
+    <div class="list list-inset">
+      <label class="item item-input">
+        <input ng-model="wish.name" type="text" placeholder="Name your app">
+      </label>
+      <label class="item item-input">
+        <select ng-model="wish.category" ng-options="category.name for category in categories">
+          <option selected value="">Choose a Category</option>
+        </select>
+      </label>
+      <label class="item item-input">
+        <input ng-model="wish.short_description" type="text" placeholder="One liner for your app">
+      </label>
+      <label class="item item-input">
+        <textarea ng-model="wish.long_description" placeholder="Describe your app"></textarea>
+      </label>
 
-  <ul class="list">
-    <li class="item item-checkbox">
-       <label class="checkbox">
-         <input ng-model="wish.platforms.ios" type="checkbox">
-       </label>
-       iOS
-    </li>
-    <li class="item item-checkbox">
-       <label class="checkbox">
-         <input ng-model="wish.platforms.android" type="checkbox">
-       </label>
-       Android
-    </li>
-    <li class="item item-checkbox">
-       <label class="checkbox">
-         <input ng-model="wish.platforms.web" type="checkbox">
-       </label>
-       Web
-    </li>
-  </ul>
-  <button ng-click="makeWish()" class="button button-block button-positive">
-    Make a Wish
-  </button>
-</div>
+      <ul class="list">
+        <li class="item item-checkbox">
+           <label class="checkbox">
+             <input ng-model="wish.platforms.ios" type="checkbox">
+           </label>
+           iOS
+        </li>
+        <li class="item item-checkbox">
+           <label class="checkbox">
+             <input ng-model="wish.platforms.android" type="checkbox">
+           </label>
+           Android
+        </li>
+        <li class="item item-checkbox">
+           <label class="checkbox">
+             <input ng-model="wish.platforms.web" type="checkbox">
+           </label>
+           Web
+        </li>
+      </ul>
+      <button ng-click="makeWish()" class="button button-block button-positive">
+        Make a Wish
+      </button>
+    </div>
+  </ion-content>
+</ion-view>

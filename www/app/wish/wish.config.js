@@ -30,6 +30,12 @@
 			controller: "MakeWishCtrl",
 			cache:false
 		})
+    .state('app.wish.wishlist', {
+			url: "/wishlist",
+			templateUrl: "app/wish/wishlist.tpl.html",
+			controller: "WishlistCtrl",
+			cache:false
+		})
     // .state('app.auth.login', {
 		// 	url: "/login",
 		// 	templateUrl: "app/auth/login.tpl.html",

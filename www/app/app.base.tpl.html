@@ -1,1 +1,49 @@
-<ion-nav-view></ion-nav-view>
+<ion-side-menus>
+
+  <ion-side-menu side="left" is-enabled="true">
+    <div class="list">
+
+      <a menu-toggle class="item item-icon-left" href="" ng-click="gotoProfile()">
+        <i class="icon ion-person"></i>
+        Profile
+        <span class="badge badge-assertive">0</span>
+      </a>
+
+      <a menu-toggle class="item item-icon-left" href="" ng-click="gotoWishlist()">
+        <i class="icon ion-ios-list"></i>
+        Wishlist
+      </a>
+
+      <a menu-toggle class="item item-icon-left" href="" ng-click="gotoBookmarks()">
+        <i class="icon ion-bookmark"></i>
+        Bookmarks
+      </a>
+
+      <a menu-toggle class="item item-icon-left" href="" ng-click="gotoLogin()">
+        <i class="icon ion-log-out"></i>
+        Logout
+      </a>
+
+      <!-- <a class="item item-icon-left" href="">
+        <i class="icon ion-mic-a"></i>
+        Record album
+        <span class="item-note">
+          Grammy
+        </span>
+      </a>
+
+      <a class="item item-icon-left" href="">
+        <i class="icon ion-person-stalker"></i>
+        Friends
+        <span class="badge badge-assertive">0</span>
+      </a> -->
+
+    </div>
+  </ion-side-menu>
+
+  <ion-side-menu-content>
+  <!-- Main content, usually <ion-nav-view> -->
+    <ion-nav-view></ion-nav-view>
+  </ion-side-menu-content>
+
+</ion-side-menus>
