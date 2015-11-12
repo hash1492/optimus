@@ -1,11 +1,14 @@
 (function () {
   var app = angular.module('optimus', [
     'ionic',
+    // Local Modules
     'optimus.auth',
     'optimus.wish',
     'optimus.category',
     'optimus.comment',
-    'optimus.bookmark'
+    'optimus.bookmark',
+    // Third Party Modules
+    'ngStorage'
   ])
 
   app.run(function($ionicPlatform) {
@@ -20,6 +23,33 @@
       }
     });
   })
+
+  app.config(['$httpProvider','$localStorageProvider',
+
+    function ($httpProvider,$localStorageProvider) {
+
+      var interceptor = [
+      function () {
+        return {
+          request: function (config) {
+            if($localStorageProvider.get("optimus_session") && $localStorageProvider.get("optimus_session").token){
+              config.headers.authorization = $localStorageProvider.get("optimus_session").token;
+            }
+            return config;
+          },
+
+          response: function (result) {
+            return result;
+          },
+
+          responseError: function (rejection) {
+
+          }
+        };
+      }];
+      $httpProvider.interceptors.push(interceptor);
+    }
+  ]);
 
   app.config(function($stateProvider, $urlRouterProvider){
 

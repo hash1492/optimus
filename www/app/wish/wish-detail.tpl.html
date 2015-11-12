@@ -22,16 +22,31 @@
   <div class="item tabs tabs-secondary tabs-icon-left">
     <a class="tab-item" href="" ng-click="toggleWishUpvote()">
       <i class="icon ion-thumbsup"></i>
-      Upvote
+      <span ng-bind="wish.upvotes"></span>
     </a>
     <a class="tab-item" href="" ng-click="toggleWishDownvote()">
       <i class="icon ion-thumbsdown"></i>
-      Downvote
+      <span ng-bind="wish.downvotes"></span>
     </a>
     <a class="tab-item" href="" ng-click="toggleWishBookmark()">
       <i class="icon ion-bookmark"></i>
       Bookmark
     </a>
+  </div>
+  <div class="list">
+    <div class="item item-input-inset">
+      <label class="item-input-wrapper">
+        <input ng-model="comment" type="text" placeholder="Comment here...">
+      </label>
+      <button class="button button-small" ng-click="addComment()">
+        Post
+      </button>
+    </div>
+  </div>
+  <div class="card" ng-repeat="comment in comments">
+    <div class="item item-text-wrap" ng-bind="comment.comment">
+      This is a basic Card which contains an item that has wrapping text.
+    </div>
   </div>
 
 </div>

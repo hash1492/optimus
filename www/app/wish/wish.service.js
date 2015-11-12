@@ -3,6 +3,10 @@
 
   app.factory("WishService", function(WishDataService) {
 
+    var _create = function(wish) {
+      return WishDataService.create(wish);
+    }
+
     var _getAll = function() {
       return WishDataService.getAll();
     }
@@ -20,9 +24,10 @@
     }
 
     return {
+      create: _create,
       getAll: _getAll,
       getById:_getById,
-      toggleWishUpvote: _toggleWishUpvote
+      toggleWishUpvote: _toggleWishUpvote,
       toggleWishDownvote: _toggleWishDownvote,
     }
   })

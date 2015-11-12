@@ -2,6 +2,6 @@
   var app = angular.module('optimus.auth')
 
   app.controller('AuthBaseCtrl',['$scope', function($scope){
-    console.log("AuthBaseCtrl called");
+    // console.log("AuthBaseCtrl called");
   }])
 })()

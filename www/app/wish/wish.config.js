@@ -7,8 +7,8 @@
 		$stateProvider
 		.state('app.wish', {
 			url: "/wish",
-			templateUrl: "app/auth/auth.base.tpl.html",
-			controller: "AuthBaseCtrl",
+			templateUrl: "app/wish/wish.base.tpl.html",
+			controller: "WishBaseCtrl",
 			cache:false,
       abstract:true
 		})

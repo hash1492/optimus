@@ -3,9 +3,6 @@
     <input ng-model="wish.name" type="text" placeholder="Name your app">
   </label>
   <label class="item item-input">
-    <!-- <div class="input-label">
-      Lightsaber
-    </div> -->
     <select ng-model="wish.category" ng-options="category.name for category in categories">
       <option selected value="">Choose a Category</option>
     </select>
@@ -20,19 +17,19 @@
   <ul class="list">
     <li class="item item-checkbox">
        <label class="checkbox">
-         <input ng-model="wish.platform.ios" type="checkbox">
+         <input ng-model="wish.platforms.ios" type="checkbox">
        </label>
        iOS
     </li>
     <li class="item item-checkbox">
        <label class="checkbox">
-         <input ng-model="wish.platform.android" type="checkbox">
+         <input ng-model="wish.platforms.android" type="checkbox">
        </label>
        Android
     </li>
     <li class="item item-checkbox">
        <label class="checkbox">
-         <input ng-model="wish.platform.web" type="checkbox">
+         <input ng-model="wish.platforms.web" type="checkbox">
        </label>
        Web
     </li>

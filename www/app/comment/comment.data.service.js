@@ -3,13 +3,19 @@
 
   app.factory("CommentDataService", function(BaseDataService) {
 
-    var _getAll = function() {
-      var url = "/comment/getAll";
+    var _getAll = function(wish_id) {
+      var url = "/comment/getAll/" + wish_id;
       return BaseDataService.http_get(url);
     }
 
+    var _create = function(comment) {
+      var url = "/comment/create";
+      return BaseDataService.http_post(url,comment);
+    }
+
     return {
-      getAll: _getAll
+      getAll: _getAll,
+      create: _create
     }
   })
 })()

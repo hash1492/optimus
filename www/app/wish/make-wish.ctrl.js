@@ -3,11 +3,9 @@
 
   app.controller('MakeWishCtrl',['$scope','$stateParams','WishService','CategoryService',
   function($scope,$stateParams,WishService,CategoryService){
-    console.log('MakeWishCtrl called');
+    // console.log('MakeWishCtrl called');
 
     $scope.wish = {
-      upvotes: 0,
-      downvotes: 0,
       platforms: {
         ios: false,
         android: false,

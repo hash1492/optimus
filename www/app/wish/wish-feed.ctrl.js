@@ -3,7 +3,7 @@
 
   app.controller('WishFeedCtrl',['$scope','$state','WishService','BookmarkService',
   function($scope,$state,WishService, BookmarkService){
-    console.log('WishFeedCtrl called');
+    // console.log('WishFeedCtrl called');
 
     WishService.getAll()
     .then(function(response) {
@@ -19,7 +19,7 @@
     }
 
     // Toggle wish upvote
-    $scope.toggleWishUpvote = function() {
+    $scope.toggleWishUpvote = function(wish_id) {
       console.log("toggleWishUpvote called");
       WishService.toggleWishUpvote(wish_id)
       .then(function(response) {
@@ -31,7 +31,7 @@
     }
 
     // Toggle wish downvote
-    $scope.toggleWishDownvote = function() {
+    $scope.toggleWishDownvote = function(wish_id) {
       console.log("toggleWishDownvote called");
       WishService.toggleWishDownvote(wish_id)
       .then(function(response) {
@@ -43,7 +43,7 @@
     }
 
     // Toggle wish bookmark
-    $scope.toggleWishBookmark = function() {
+    $scope.toggleWishBookmark = function(wish_id) {
       console.log("toggleBookmark called");
       BookmarkService.toggleBookmark(wish_id)
       .then(function(response) {
