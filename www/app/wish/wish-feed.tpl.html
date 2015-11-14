@@ -5,29 +5,36 @@
 </ion-header-bar>
 <ion-view>
   <ion-content class="has-header">
-    <div class="list list-inset">
-      <label class="item item-input">
-        <i class="icon ion-search placeholder-icon"></i>
-        <input type="text" placeholder="Search">
-      </label>
-    </div>
-    <div class="card" ng-repeat="wish in wishes" ng-click="gotoWishDetail(wish.id)">
-      <div class="item item-text-wrap" ng-bind="wish.name">
-
+    <div ng-if="wishes">
+      <div class="list list-inset">
+        <label class="item item-input">
+          <i class="icon ion-search placeholder-icon"></i>
+          <input type="text" placeholder="Search">
+        </label>
       </div>
-      <div class="item tabs tabs-secondary tabs-icon-left">
-        <a class="tab-item" href="" ng-click="toggleWishUpvote(wish._id)">
-          <i class="icon ion-thumbsup"></i>
-          <span ng-bind="wish.upvotes"></span>
-        </a>
-        <a class="tab-item" href="" ng-click="toggleWishDownvote(wish._id)">
-          <i class="icon ion-thumbsdown"></i>
-          <span ng-bind="wish.downvotes"></span>
-        </a>
-        <a class="tab-item" href="" ng-click="toggleWishBookmark(wish._id)" >
-          <i class="icon ion-bookmark"></i>
-          Bookmark
-        </a>
+      <div class="card" ng-repeat="wish in wishes">
+        <div class="item item-text-wrap" ng-bind="wish.name" ng-click="gotoWishDetail(wish.id)">
+
+        </div>
+        <div class="item tabs tabs-secondary tabs-icon-left">
+          <a ng-disabled="wish.is_downvoted" class="tab-item" href="" ng-click="toggleWishUpvote(wish)">
+            <i ng-class="{'blue-col': wish.is_upvoted}" class="icon ion-thumbsup"></i>
+            <span ng-bind="wish.upvotes"></span>
+          </a>
+          <a ng-disabled="wish.is_upvoted" class="tab-item" href="" ng-click="toggleWishDownvote(wish)">
+            <i ng-class="{'blue-col': wish.is_downvoted}" class="icon ion-thumbsdown"></i>
+            <span ng-bind="wish.downvotes"></span>
+          </a>
+          <a class="tab-item" href="" ng-click="toggleWishBookmark(wish)" >
+            <i ng-class="{'blue-col': wish.is_bookmarked}" class="icon ion-bookmark"></i>
+            Bookmark
+          </a>
+        </div>
+      </div>
+      <div class="card" ng-if="wishes.length === 0">
+        <div class="item item-text-wrap">
+          No wishes exist
+        </div>
       </div>
     </div>
   </ion-content>

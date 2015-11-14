@@ -19,12 +19,12 @@
       return WishDataService.getMyWishlist();
     }
 
-    var _toggleWishUpvote = function(wish_id) {
-      return WishDataService.toggleWishUpvote(wish_id)
+    var _toggleWishUpvote = function(wish_id,wish_upvotes) {
+      return WishDataService.toggleWishUpvote(wish_id,wish_upvotes)
     }
 
-    var _toggleWishDownvote = function(wish_id) {
-      return WishDataService.toggleWishDownvote(wish_id)
+    var _toggleWishDownvote = function(wish_id,wish_downvotes) {
+      return WishDataService.toggleWishDownvote(wish_id,wish_downvotes)
     }
 
     return {

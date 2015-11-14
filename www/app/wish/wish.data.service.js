@@ -23,13 +23,13 @@
       return BaseDataService.http_get(url);
     }
 
-    var _toggleWishUpvote = function(wish_id) {
-      var url = "/upvote/toggleWishUpvote/" + wish_id;
+    var _toggleWishUpvote = function(wish_id,wish_upvotes) {
+      var url = "/upvote/toggleWishUpvote/" + wish_id + "/" + wish_upvotes;
       return BaseDataService.http_get(url);
     }
 
-    var _toggleWishDownvote = function(wish_id, upvote_downvote) {
-      var url = "/downvote/toggleWishDownvote/" + wish_id;
+    var _toggleWishDownvote = function(wish_id, wish_downvotes) {
+      var url = "/downvote/toggleWishDownvote/" + wish_id + "/" + wish_downvotes;
       return BaseDataService.http_get(url);
     }
 
