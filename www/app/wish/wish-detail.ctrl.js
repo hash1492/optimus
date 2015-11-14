@@ -46,7 +46,7 @@
     // Toggle wish bookmark
     $scope.toggleWishBookmark = function() {
       console.log("toggleBookmark called");
-      BookmarkService.toggleBookmark(wish_id)
+      BookmarkService.toggleWishBookmark(wish_id)
       .then(function(response) {
         console.log(response);
       })
