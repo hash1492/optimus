@@ -8,7 +8,7 @@
       return BaseDataService.http_get(url);
     }
 
-    var _getAll = function(user) {
+    var _getAll = function() {
       var url = "/bookmark/getAll";
       return BaseDataService.http_get(url);
     }

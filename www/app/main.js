@@ -8,10 +8,11 @@
     'optimus.comment',
     'optimus.bookmark',
     // Third Party Modules
-    'ngStorage'
+    'ngStorage',
+    'yaru22.angular-timeago'
   ])
 
-  app.run(function($ionicPlatform) {
+  app.run(function($ionicPlatform, $localStorage, $state) {
     $ionicPlatform.ready(function() {
       // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
       // for form inputs)
@@ -20,6 +21,13 @@
       }
       if(window.StatusBar) {
         StatusBar.styleDefault();
+      }
+
+      if($localStorage.optimus_session){
+        $state.go("app.wish.wish-feed");
+      }
+      else{
+        $state.go("app.auth.login");
       }
     });
   })

@@ -27,32 +27,35 @@
       </div>
 
       <div class="item tabs tabs-secondary tabs-icon-left">
-        <a class="tab-item" href="" ng-click="toggleWishUpvote()">
-          <i class="icon ion-thumbsup"></i>
+        <a ng-disabled="wish.is_downvoted" class="tab-item" href="" ng-click="toggleWishUpvote()">
+          <i ng-class="{'blue-col': wish.is_upvoted}" ng class="icon ion-thumbsup"></i>
           <span ng-bind="wish.upvotes"></span>
         </a>
-        <a class="tab-item" href="" ng-click="toggleWishDownvote()">
-          <i class="icon ion-thumbsdown"></i>
+        <a ng-disabled="wish.is_upvoted" class="tab-item" href="" ng-click="toggleWishDownvote()">
+          <i ng-class="{'blue-col': wish.is_downvoted}" class="icon ion-thumbsdown"></i>
           <span ng-bind="wish.downvotes"></span>
         </a>
         <a class="tab-item" href="" ng-click="toggleWishBookmark()">
-          <i class="icon ion-bookmark"></i>
+          <i ng-class="{'blue-col': wish.is_bookmarked}" class="icon ion-bookmark"></i>
           Bookmark
         </a>
       </div>
       <div class="list">
         <div class="item item-input-inset">
           <label class="item-input-wrapper">
-            <input ng-model="comment" type="text" placeholder="Comment here...">
+            <input ng-model="comment.text" type="text" placeholder="Comment here...">
           </label>
-          <button class="button button-small" ng-click="addComment()">
+          <button class="button button-small" ng-disabled="comment.text.length === 0" ng-click="addComment()">
             Post
           </button>
         </div>
       </div>
       <div class="card" ng-repeat="comment in comments">
-        <div class="item item-text-wrap" ng-bind="comment.comment">
-          This is a basic Card which contains an item that has wrapping text.
+        <div class="item item-avatar">
+          <img src="/img/avatar.jpg">
+          <h2 ng-bind="comment.user_id | limitTo: 5">Pretty Hate Machine</h2>
+          <p ng-bind="comment.comment">Nine Inch Nails</p>
+          <p ng-bind="comment.createdAt | timeAgo">Nine Inch Nails</p>
         </div>
       </div>
     </div>

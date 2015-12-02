@@ -20,10 +20,11 @@
     // Toggle wish upvote
     $scope.toggleWishUpvote = function() {
       console.log("toggleWishUpvote called");
-      WishService.toggleWishUpvote(wish_id)
+      WishService.toggleWishUpvote(wish_id, $scope.wish.upvotes)
       .then(function(response) {
         console.log(response);
-        $scope.wish.upvotes = response.data.upvote_count;
+        $scope.wish.upvotes = response.data.upvotes;
+        $scope.wish.is_upvoted = !$scope.wish.is_upvoted;
       })
       .catch(function(err) {
         console.log(err);
@@ -33,10 +34,11 @@
     // Toggle wish downvote
     $scope.toggleWishDownvote = function() {
       console.log("toggleWishDownvote called");
-      WishService.toggleWishDownvote(wish_id)
+      WishService.toggleWishDownvote(wish_id, $scope.wish.downvotes)
       .then(function(response) {
         console.log(response);
-        $scope.wish.downvotes = response.data.downvote_count;
+        $scope.wish.downvotes = response.data.downvotes;
+        $scope.wish.is_downvoted = !$scope.wish.is_downvoted;
       })
       .catch(function(err) {
         console.log(err);
@@ -49,6 +51,7 @@
       BookmarkService.toggleWishBookmark(wish_id)
       .then(function(response) {
         console.log(response);
+        $scope.wish.is_bookmarked = !$scope.wish.is_bookmarked;
       })
       .catch(function(err) {
         console.log(err);
@@ -68,18 +71,20 @@
       })
     }();
 
-    $scope.comment = "";
+    $scope.comment = {
+      text: ""
+    };
     // Add a comment
     $scope.addComment = function() {
       // console.log("addComment called");
       var comment = {};
       comment.wish_id = wish_id;
-      comment.comment = $scope.comment;
+      comment.comment = $scope.comment.text;
       console.log(comment);
       CommentService.create(comment)
       .then(function(response) {
         console.log(response);
-        $scope.comment = "";
+        $scope.comment.text = "";
         $scope.comments.push(response.data);
       })
       .catch(function(err) {

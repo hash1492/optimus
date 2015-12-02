@@ -7,8 +7,13 @@
       return BookmarkDataService.toggleWishBookmark(wish_id);
     }
 
+    var _getAll = function() {
+      return BookmarkDataService.getAll();
+    }
+
     return {
-      toggleWishBookmark: _toggleWishBookmark
+      toggleWishBookmark: _toggleWishBookmark,
+      getAll: _getAll
     }
   })
 })()
