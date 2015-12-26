@@ -1,12 +1,24 @@
-<ion-side-menus>
+<ion-side-menus enable-menu-with-back-views="true">
 
-  <ion-side-menu side="left" is-enabled="true">
-    <div class="list">
+  <ion-side-menu side="left" is-enabled="true" class="main-sidemenu">
+    <div class="profile-pic">
+      <div class="user-img">
+        <img src="../img/avatar.jpg" alt="" />
+      </div>
+      <div class="user-name">
+        Harshil Shah
+      </div>
+    </div>
+    <div class="list sidemenu-list">
 
-      <a menu-toggle class="item item-icon-left" href="" ng-click="gotoProfile()">
-        <i class="icon ion-person"></i>
-        Profile
-        <span class="badge badge-assertive">0</span>
+      <a menu-toggle class="item item-icon-left" href="" ng-click="gotoWishFeed()">
+        <i class="icon ion-ios-home"></i>
+        Home
+      </a>
+
+      <a menu-toggle class="item item-icon-left" href="" ng-click="gotoMakeWish()">
+        <i class="icon ion-ios-lightbulb"></i>
+        Make A Wish
       </a>
 
       <a menu-toggle class="item item-icon-left" href="" ng-click="gotoWishlist()">
@@ -17,6 +29,12 @@
       <a menu-toggle class="item item-icon-left" href="" ng-click="gotoBookmarks()">
         <i class="icon ion-bookmark"></i>
         Bookmarks
+      </a>
+
+      <a menu-toggle class="item item-icon-left" href="" ng-click="gotoProfile()">
+        <i class="icon ion-person"></i>
+        Profile
+        <span class="badge badge-assertive">0</span>
       </a>
 
       <a menu-toggle class="item item-icon-left" href="" ng-click="gotoLogin()">

@@ -21,5 +21,14 @@
       $state.go("app.auth.login");
     }
 
+    $rootScope.gotoMakeWish = function() {
+      $state.go("app.wish.make-wish");
+    }
+
+    $rootScope.gotoWishFeed = function() {
+      $state.go("app.wish.wish-feed");
+    }
+
+
   }])
 })()

@@ -2,3 +2,65 @@
 .blue-col {
   color:#0c63ee;
 }
+
+/*Optimus Main Color*/
+.main-header {
+  background:rgb(43, 55, 69);
+}
+.main-header button{
+  color: #fff;
+}
+
+
+/*Sidemenu CSS Start*/
+
+.main-sidemenu {
+  background-color: rgb(43, 55, 69);
+  color: #fff;
+}
+
+.profile-pic {
+  height: 160px;
+  background: rgb(43, 55, 69);
+}
+
+.user-img {
+  width: 100px;
+  height: 100px;
+  background: #ddd;
+  margin: auto;
+  position: relative;
+  top: 20px;
+  border-radius: 100%;
+  border: 2px solid #fff;
+}
+
+.user-img img{
+  width: 95px;
+  height: 95px;
+  border-radius: 100%;
+}
+
+.user-name {
+  display: block;
+  text-align: center;
+  margin-top: 30px;
+  font-size: 1.2em;
+}
+
+
+.sidemenu-list {
+  color:#fff;
+}
+
+.sidemenu-list a:nth-child(odd){
+  background-color: rgb(48, 61, 77);
+}
+
+.sidemenu-list a:nth-child(even){
+  background-color: rgb(43, 55, 69);
+}
+.sidemenu-list .item{
+  border:none;
+}
+/*Sidemenu CSS End*/

@@ -1,19 +1,21 @@
 (function(){
   var app = angular.module('optimus.wish');
 
-  app.controller('WishDetailCtrl',['$scope','$stateParams','WishService','BookmarkService','CommentService',
-  function($scope,$stateParams,WishService,BookmarkService,CommentService){
+  app.controller('WishDetailCtrl',['$scope','$stateParams','WishService','BookmarkService','CommentService','$ionicLoading',
+  function($scope,$stateParams,WishService,BookmarkService,CommentService,$ionicLoading){
     // console.log('WishDetailCtrl called');
 
     var wish_id = $stateParams.wish_id;
-
+    $ionicLoading.show();
     // Get wish by id
     WishService.getById(wish_id)
     .then(function(response) {
       console.log(response);
       $scope.wish = response.data;
+      $ionicLoading.hide();
     })
     .catch(function(err) {
+      $ionicLoading.hide();
       console.log(err);
     })
 
