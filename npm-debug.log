@@ -1,0 +1,92 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/bin/node', '/usr/bin/npm', 'install', '-g', 'karma-cli' ]
+2 info using npm@1.4.28
+3 info using node@v0.10.37
+4 verbose node symlink /usr/bin/node
+5 verbose cache add [ 'karma-cli', null ]
+6 verbose cache add name=undefined spec="karma-cli" args=["karma-cli",null]
+7 verbose parsed url { protocol: null,
+7 verbose parsed url   slashes: null,
+7 verbose parsed url   auth: null,
+7 verbose parsed url   host: null,
+7 verbose parsed url   port: null,
+7 verbose parsed url   hostname: null,
+7 verbose parsed url   hash: null,
+7 verbose parsed url   search: null,
+7 verbose parsed url   query: null,
+7 verbose parsed url   pathname: 'karma-cli',
+7 verbose parsed url   path: 'karma-cli',
+7 verbose parsed url   href: 'karma-cli' }
+8 silly lockFile aa100f68-karma-cli karma-cli
+9 verbose lock karma-cli /home/harshil/.npm/aa100f68-karma-cli.lock
+10 silly lockFile aa100f68-karma-cli karma-cli
+11 silly lockFile aa100f68-karma-cli karma-cli
+12 verbose addNamed [ 'karma-cli', '' ]
+13 verbose addNamed [ null, '*' ]
+14 silly lockFile 8f6f2c72-karma-cli karma-cli@
+15 verbose lock karma-cli@ /home/harshil/.npm/8f6f2c72-karma-cli.lock
+16 silly addNameRange { name: 'karma-cli', range: '*', hasData: false }
+17 verbose request where is /karma-cli
+18 verbose request registry https://registry.npmjs.org/
+19 verbose request id 27ff053cb2d6fb8a
+20 verbose url raw /karma-cli
+21 verbose url resolving [ 'https://registry.npmjs.org/', './karma-cli' ]
+22 verbose url resolved https://registry.npmjs.org/karma-cli
+23 verbose request where is https://registry.npmjs.org/karma-cli
+24 info trying registry request attempt 1 at 01:58:54
+25 verbose etag "5Q4ZGLS6HP47MWTIUMXFEKD98"
+26 http GET https://registry.npmjs.org/karma-cli
+27 http 200 https://registry.npmjs.org/karma-cli
+28 silly registry.get cb [ 200,
+28 silly registry.get   { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+28 silly registry.get     etag: '"2O6ON6LM0D1PGHF5IM48LVYWF"',
+28 silly registry.get     'content-type': 'application/json',
+28 silly registry.get     'cache-control': 'max-age=300',
+28 silly registry.get     'content-length': '12920',
+28 silly registry.get     'accept-ranges': 'bytes',
+28 silly registry.get     date: 'Tue, 05 Jan 2016 20:28:55 GMT',
+28 silly registry.get     via: '1.1 varnish',
+28 silly registry.get     age: '0',
+28 silly registry.get     connection: 'keep-alive',
+28 silly registry.get     'x-served-by': 'cache-sin6924-SIN',
+28 silly registry.get     'x-cache': 'HIT',
+28 silly registry.get     'x-cache-hits': '1',
+28 silly registry.get     'x-timer': 'S1452025734.925278,VS0,VE916',
+28 silly registry.get     vary: 'Accept' } ]
+29 silly addNameRange number 2 { name: 'karma-cli', range: '*', hasData: true }
+30 silly addNameRange versions [ 'karma-cli',
+30 silly addNameRange   [ '0.0.1', '0.0.2', '0.0.3', '0.0.4', '0.1.0', '0.1.1', '0.1.2' ] ]
+31 verbose addNamed [ 'karma-cli', '0.1.2' ]
+32 verbose addNamed [ '0.1.2', '0.1.2' ]
+33 silly lockFile 242f57b6-karma-cli-0-1-2 karma-cli@0.1.2
+34 verbose lock karma-cli@0.1.2 /home/harshil/.npm/242f57b6-karma-cli-0-1-2.lock
+35 silly lockFile ebf4a1ab-rg-karma-cli-karma-cli-0-1-2-tgz https://registry.npmjs.org/karma-cli/-/karma-cli-0.1.2.tgz
+36 verbose lock https://registry.npmjs.org/karma-cli/-/karma-cli-0.1.2.tgz /home/harshil/.npm/ebf4a1ab-rg-karma-cli-karma-cli-0-1-2-tgz.lock
+37 verbose addRemoteTarball [ 'https://registry.npmjs.org/karma-cli/-/karma-cli-0.1.2.tgz',
+37 verbose addRemoteTarball   'cacea84371ece19876265c8fa102ebbb9fee4a8c' ]
+38 info retry fetch attempt 1 at 01:58:56
+39 verbose fetch to= /tmp/npm-4298-Y__2ROuA/registry.npmjs.org/karma-cli/-/karma-cli-0.1.2.tgz
+40 http GET https://registry.npmjs.org/karma-cli/-/karma-cli-0.1.2.tgz
+41 http 200 https://registry.npmjs.org/karma-cli/-/karma-cli-0.1.2.tgz
+42 silly lockFile ebf4a1ab-rg-karma-cli-karma-cli-0-1-2-tgz https://registry.npmjs.org/karma-cli/-/karma-cli-0.1.2.tgz
+43 silly lockFile ebf4a1ab-rg-karma-cli-karma-cli-0-1-2-tgz https://registry.npmjs.org/karma-cli/-/karma-cli-0.1.2.tgz
+44 silly lockFile 242f57b6-karma-cli-0-1-2 karma-cli@0.1.2
+45 silly lockFile 242f57b6-karma-cli-0-1-2 karma-cli@0.1.2
+46 silly lockFile 8f6f2c72-karma-cli karma-cli@
+47 silly lockFile 8f6f2c72-karma-cli karma-cli@
+48 error Error: EACCES, mkdir '/home/harshil/.npm/karma-cli/0.1.2'
+48 error  { [Error: EACCES, mkdir '/home/harshil/.npm/karma-cli/0.1.2']
+48 error   errno: 3,
+48 error   code: 'EACCES',
+48 error   path: '/home/harshil/.npm/karma-cli/0.1.2' }
+49 error Please try running this command again as root/Administrator.
+50 error System Linux 3.13.0-53-generic
+51 error command "/usr/bin/node" "/usr/bin/npm" "install" "-g" "karma-cli"
+52 error cwd /home/harshil/repos/optimus
+53 error node -v v0.10.37
+54 error npm -v 1.4.28
+55 error path /home/harshil/.npm/karma-cli/0.1.2
+56 error code EACCES
+57 error errno 3
+58 error stack Error: EACCES, mkdir '/home/harshil/.npm/karma-cli/0.1.2'
+59 verbose exit [ 3, true ]

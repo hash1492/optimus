@@ -20,10 +20,10 @@
           the content is from a card-body consisting of an image and paragraph text. The footer
           consists of tabs, icons aligned left, within the card-footer.
         </p>
-        <p>
+        <!-- <p>
           <a href="" class="subdued">1 Like</a>
           <a href="" class="subdued">5 Comments</a>
-        </p>
+        </p> -->
       </div>
 
       <div class="item tabs tabs-secondary tabs-icon-left">
@@ -40,6 +40,16 @@
           Bookmark
         </a>
       </div>
+
+
+      <div class="list">
+        <div class="item item-input-inset">
+          <button class="button button-block optimus-color optimus-font" ng-click="suggestApp()">
+            Suggest an app
+          </button>
+        </div>
+      </div>
+
       <div class="list">
         <div class="item item-input-inset">
           <label class="item-input-wrapper">
@@ -50,12 +60,18 @@
           </button>
         </div>
       </div>
+
       <div class="card" ng-repeat="comment in comments">
         <div class="item item-avatar">
           <img src="/img/avatar.jpg">
           <h2 ng-bind="comment.user_id | limitTo: 5">Pretty Hate Machine</h2>
           <p ng-bind="comment.comment">Nine Inch Nails</p>
           <p ng-bind="comment.createdAt | timeAgo">Nine Inch Nails</p>
+        </div>
+      </div>
+      <div class="card" ng-if="comments.length === 0">
+        <div class="item item-text-wrap">
+          No comments
         </div>
       </div>
     </div>

@@ -1,8 +1,8 @@
 (function(){
   var app = angular.module('optimus.wish');
 
-  app.controller('WishDetailCtrl',['$scope','$stateParams','WishService','BookmarkService','CommentService','$ionicLoading',
-  function($scope,$stateParams,WishService,BookmarkService,CommentService,$ionicLoading){
+  app.controller('WishDetailCtrl',['$scope','$stateParams','WishService','BookmarkService','CommentService','$ionicLoading','$ionicPopup',
+  function($scope,$stateParams,WishService,BookmarkService,CommentService,$ionicLoading, $ionicPopup){
     // console.log('WishDetailCtrl called');
 
     var wish_id = $stateParams.wish_id;
@@ -92,6 +92,31 @@
       .catch(function(err) {
         console.log(err);
       })
+    }
+
+
+    $scope.suggestApp = function () {
+      // Suggest an app popup
+     var myPopup = $ionicPopup.show({
+       template: '<input type="text" ng-model="suggestion.name">',
+       title: 'Suggest an app',
+       subTitle: "Suggest an app that might fulfill the user's wish",
+       scope: $scope,
+       buttons: [
+         { text: 'Cancel' },
+         {
+           text: '<b>Suggest</b>',
+           type: 'button-positive',
+           onTap: function(e) {
+             console.log("suggestion made");
+           }
+         }
+       ]
+     });
+
+     myPopup.then(function(res) {
+       console.log('Tapped!', res);
+     });
     }
 
 

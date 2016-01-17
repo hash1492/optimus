@@ -30,7 +30,9 @@
     // Make the wish
     $scope.makeWish = function() {
       console.log($scope.wish);
-      $ionicLoading.show();
+      $ionicLoading.show({
+        template: 'Making wish...'
+      });
       WishService.create($scope.wish)
       .then(function(response) {
         console.log(response);

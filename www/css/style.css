@@ -4,8 +4,17 @@
 }
 
 /*Optimus Main Color*/
+.optimus-color {
+  background:#2B3745
+}
+
+.optimus-font {
+  color: #fff;
+}
+
+
 .main-header {
-  background:rgb(43, 55, 69);
+  background:#2B3745
 }
 .main-header button{
   color: #fff;
@@ -15,13 +24,13 @@
 /*Sidemenu CSS Start*/
 
 .main-sidemenu {
-  background-color: rgb(43, 55, 69);
+  background-color: #2B3745
   color: #fff;
 }
 
 .profile-pic {
   height: 160px;
-  background: rgb(43, 55, 69);
+  background: #2B3745
 }
 
 .user-img {
@@ -54,13 +63,37 @@
 }
 
 .sidemenu-list a:nth-child(odd){
-  background-color: rgb(48, 61, 77);
+  background-color: #303D4D;
 }
 
 .sidemenu-list a:nth-child(even){
-  background-color: rgb(43, 55, 69);
+  background-color: #2B3745
 }
 .sidemenu-list .item{
   border:none;
 }
+.sidemenu-list .item:active{
+  background-color: #2296F3;
+}
 /*Sidemenu CSS End*/
+
+
+
+/*Make a Wish*/
+
+.optimus-dropdown {
+  background-color: #fff;
+  color: #aaa;
+  height: 40px;
+  width: 100%;
+  border: 0;
+  padding: 12px;
+}
+
+.optimus-dropdown-filled {
+  color: #000 !important;
+}
+
+.optimus-textarea {
+  resize:none;
+}

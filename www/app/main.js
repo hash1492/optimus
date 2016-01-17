@@ -40,7 +40,7 @@
       function () {
         return {
           request: function (config) {
-            console.log($localStorageProvider.get("optimus_session"));
+            // console.log($localStorageProvider.get("optimus_session"));
             if($localStorageProvider.get("optimus_session") && $localStorageProvider.get("optimus_session").token){
               config.headers.authorization = $localStorageProvider.get("optimus_session").token;
             }
@@ -79,7 +79,7 @@
   })
 
   // app.constant("REST_BASE_URL","http://localhost:1337");
-  app.constant("REST_BASE_URL","http://192.168.0.111:1337");
+  app.constant("REST_BASE_URL","http://192.168.0.105:1337");
 
 
 })()

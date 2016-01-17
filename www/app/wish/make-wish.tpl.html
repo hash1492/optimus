@@ -2,26 +2,38 @@
   <div class="buttons">
     <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
   </div>
+  <h1 class="title optimus-font">Make a Wish</h1>
 </ion-header-bar>
 <ion-view>
   <ion-content class="has-header">
     <form name="makeWishForm">
-      <div class="list list-inset">
-        <label class="item item-input">
-          <input ng-model="wish.name" type="text" placeholder="Name your app" required>
-        </label>
-        <label class="item item-input">
-          <select ng-model="wish.category" ng-options="category.name for category in categories" required>
-            <option selected value="">Choose a Category</option>
-          </select>
-        </label>
-        <label class="item item-input">
-          <input ng-model="wish.short_description" type="text" placeholder="One liner for your app" required>
-        </label>
-        <label class="item item-input">
-          <textarea ng-model="wish.long_description" placeholder="Describe your app" required></textarea>
-        </label>
 
+      <div class="card">
+        <div class="list">
+          <label class="item item-input">
+            <input type="text" placeholder="Name your app" ng-model="wish.name" required>
+          </label>
+          <select ng-model="wish.category" ng-options="category.name for category in categories" required ng-class="{'optimus-dropdown-filled': wish.category.id}" class="optimus-dropdown">
+            <option selected value="">Choose a category</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="list">
+          <label class="item item-input">
+            <textarea rows="3" ng-maxlength="100" class="optimus-textarea" ng-model="wish.short_description" placeholder="One liner for your app (Max 100 characters)" required></textarea>
+          </label>
+          <label class="item item-input">
+            <textarea rows="10" class="optimus-textarea" ng-model="wish.long_description" placeholder="Describe your app" required></textarea>
+          </label>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="item item-divider">
+          Platforms
+        </div>
         <ul class="list">
           <li class="item item-checkbox">
              <label class="checkbox">
@@ -42,10 +54,14 @@
              Web
           </li>
         </ul>
-        <button ng-click="makeWish()" ng-disabled="makeWishForm.$pristine || makeWishForm.$invalid" class="button button-block button-positive">
+      </div>
+
+      <div class="list list-inset">
+        <button ng-click="makeWish()" ng-disabled="makeWishForm.$pristine || makeWishForm.$invalid" class="button button-block optimus-color optimus-font">
           Make a Wish
         </button>
       </div>
+
     </form>
   </ion-content>
 </ion-view>
