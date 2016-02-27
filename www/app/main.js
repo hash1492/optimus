@@ -78,8 +78,9 @@
 
   })
 
-  // app.constant("REST_BASE_URL","http://localhost:1337");
-  app.constant("REST_BASE_URL","http://192.168.0.105:1337");
+  app.constant("REST_BASE_URL","http://localhost:1337");
+  // app.constant("REST_BASE_URL","http://192.168.0.105:1337");
+  // app.constant("REST_BASE_URL","http://rocky-ravine-69769.herokuapp.com");
 
 
 })()

@@ -7,16 +7,16 @@
       return WishDataService.create(wish);
     }
 
-    var _getAll = function() {
-      return WishDataService.getAll();
+    var _getAll = function(page_number) {
+      return WishDataService.getAll(page_number);
     }
 
     var _getById = function(wish_id) {
       return WishDataService.getById(wish_id);
     }
 
-    var _getMyWishlist = function() {
-      return WishDataService.getMyWishlist();
+    var _getMyWishlist = function(page_number) {
+      return WishDataService.getMyWishlist(page_number);
     }
 
     var _toggleWishUpvote = function(wish_id,wish_upvotes) {

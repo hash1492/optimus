@@ -5,7 +5,7 @@
 
 /*Optimus Main Color*/
 .optimus-color {
-  background:#2B3745
+  background:#2B3745;
 }
 
 .optimus-font {
@@ -14,7 +14,7 @@
 
 
 .main-header {
-  background:#2B3745
+  background:#2B3745;
 }
 .main-header button{
   color: #fff;
@@ -24,13 +24,13 @@
 /*Sidemenu CSS Start*/
 
 .main-sidemenu {
-  background-color: #2B3745
+  background-color: #2B3745;
   color: #fff;
 }
 
 .profile-pic {
   height: 160px;
-  background: #2B3745
+  background: #2B3745;
 }
 
 .user-img {

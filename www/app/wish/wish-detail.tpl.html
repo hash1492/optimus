@@ -4,13 +4,14 @@
   </div>
 </ion-header-bar>
 <ion-view>
-  <ion-content class="has-header">
+  <ion-content class="has-header" ng-if="wish">
     <div class="list">
 
       <div class="item item-avatar">
         <!-- <img src="mcfly.jpg"> -->
         <h2 ng-bind="wish.name">Marty McFly</h2>
         <p ng-bind="wish.short_description">November 05, 1955</p>
+        <p><i class="ion-android-time padding"></i><span ng-bind="wish.createdAt | timeAgo">November 05, 1955</span></p>
       </div>
 
       <div class="item item-body">

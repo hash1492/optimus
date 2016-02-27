@@ -39,5 +39,10 @@
         </div>
       </div>
     </div>
+    <ion-infinite-scroll
+      ng-if="!wishes_fetched && !fetching_wishes"
+      icon="ion-loading-c"
+      on-infinite="getWishes()">
+    </ion-infinite-scroll>
   </ion-content>
 </ion-view>

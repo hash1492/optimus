@@ -8,8 +8,8 @@
       return BaseDataService.http_post(url, wish);
     }
 
-    var _getAll = function(user) {
-      var url = "/wish/getAll";
+    var _getAll = function(page_number) {
+      var url = "/wish/getAll/" + page_number;
       return BaseDataService.http_get(url);
     }
 
@@ -18,8 +18,8 @@
       return BaseDataService.http_get(url);
     }
 
-    var _getMyWishlist = function() {
-      var url = "/wish/getMyWishlist";
+    var _getMyWishlist = function(page_number) {
+      var url = "/wish/getMyWishlist/" + page_number;
       return BaseDataService.http_get(url);
     }
 
