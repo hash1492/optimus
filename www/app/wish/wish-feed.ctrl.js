@@ -1,15 +1,18 @@
 (function(){
   var app = angular.module('optimus.wish');
 
-  app.controller('WishFeedCtrl',['$scope','$state','WishService','BookmarkService','$ionicLoading',
-  function($scope,$state,WishService, BookmarkService,$ionicLoading){
+  app.controller('WishFeedCtrl',['$scope','$state','WishService','BookmarkService','$ionicLoading','$ionicHistory',
+  function($scope,$state,WishService, BookmarkService,$ionicLoading,$ionicHistory){
     // console.log('WishFeedCtrl called');
+    $ionicHistory.clearHistory();
+
     var page_number = 0;
     $scope.wishes = [];
 
     $scope.getWishes = function() {
       $scope.fetching_wishes = true;
       $ionicLoading.show();
+      console.log("getAll wishes called");
       WishService.getAll(page_number)
       .then(function(response) {
         console.log(response);

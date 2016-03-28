@@ -1,8 +1,8 @@
 (function(){
   var app = angular.module('optimus')
 
-  app.controller('AppBaseCtrl',['$scope','$rootScope','$state',
-   function($scope,$rootScope,$state){
+  app.controller('AppBaseCtrl',['$scope','$rootScope','$state','StorageService',
+   function($scope,$rootScope,$state,StorageService){
     // console.log("AppBaseCtrl called");
 
     $rootScope.gotoProfile = function() {
@@ -27,6 +27,11 @@
 
     $rootScope.gotoWishFeed = function() {
       $state.go("app.wish.wish-feed");
+    }
+
+    $rootScope.logout = function() {
+      StorageService.delete("optimus_session");
+      $state.go("app.auth.login");
     }
 
 

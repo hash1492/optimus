@@ -1,8 +1,10 @@
 (function(){
   var app = angular.module('optimus.auth');
 
-  app.controller('LoginCtrl',['$scope','AuthService','$state','$localStorage', function($scope,AuthService,$state,$localStorage){
+  app.controller('LoginCtrl',['$scope','AuthService','$state','StorageService','$ionicHistory',
+  function($scope,AuthService,$state,StorageService,$ionicHistory){
     console.log('LoginCtrl called');
+    $ionicHistory.clearHistory();
 
     $scope.user = {
       email: "hash_1492@yahoo.com",
@@ -14,10 +16,8 @@
       AuthService.login($scope.user)
       .then(function(response) {
         console.log(response);
-
-        console.log($localStorage);
-        $localStorage.optimus_session = response.data;
-        console.log($localStorage);
+        // Set the token info in localstorage
+        StorageService.set("optimus_session",JSON.stringify(response.data));
         $state.go("app.wish.wish-feed");
       }, function(err) {
         console.log(err);

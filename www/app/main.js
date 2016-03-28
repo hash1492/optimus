@@ -2,6 +2,7 @@
   var app = angular.module('optimus', [
     'ionic',
     // Local Modules
+    'optimus.storage',
     'optimus.auth',
     'optimus.wish',
     'optimus.category',
@@ -12,7 +13,7 @@
     'yaru22.angular-timeago'
   ])
 
-  app.run(function($ionicPlatform, $localStorage, $state) {
+  app.run(function($ionicPlatform, StorageService, $state) {
     $ionicPlatform.ready(function() {
       // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
       // for form inputs)
@@ -22,8 +23,8 @@
       if(window.StatusBar) {
         StatusBar.styleDefault();
       }
-
-      if($localStorage.optimus_session){
+      console.log(StorageService.get("optimus_session"));
+      if(JSON.parse(StorageService.get("optimus_session"))){
         $state.go("app.wish.wish-feed");
       }
       else{
@@ -32,17 +33,27 @@
     });
   })
 
-  app.config(['$httpProvider','$localStorageProvider',
-
-    function ($httpProvider,$localStorageProvider) {
+  app.config(['$httpProvider','StorageServiceProvider',
+    function ($httpProvider,StorageServiceProvider) {
 
       var interceptor = [
       function () {
         return {
           request: function (config) {
-            // console.log($localStorageProvider.get("optimus_session"));
-            if($localStorageProvider.get("optimus_session") && $localStorageProvider.get("optimus_session").token){
-              config.headers.authorization = $localStorageProvider.get("optimus_session").token;
+
+            if(config.url.indexOf("http://localhost:1337") > -1 || config.url.indexOf("http://rocky-ravine-69769.herokuapp.com") > -1){
+              // Check if the localstorage has optimus_session
+              if(StorageServiceProvider.get("optimus_session")){
+                var optimus_session = JSON.parse(StorageServiceProvider.get("optimus_session"));
+              }
+              else {
+                var optimus_session = null;
+              }
+
+              // Check if the token exists. If so, add it to the request header
+              if(optimus_session && optimus_session.token){
+                config.headers.authorization = optimus_session.token;
+              }
             }
             return config;
           },
