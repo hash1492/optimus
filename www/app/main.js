@@ -11,9 +11,9 @@
     // Third Party Modules
     'ngStorage',
     'yaru22.angular-timeago'
-  ])
+  ]);
 
-  app.run(function($ionicPlatform, StorageService, $state) {
+  app.run(function($ionicPlatform, StorageService, $state, $rootScope) {
     $ionicPlatform.ready(function() {
       // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
       // for form inputs)
@@ -23,15 +23,16 @@
       if(window.StatusBar) {
         StatusBar.styleDefault();
       }
-      console.log(StorageService.get("optimus_session"));
+      // console.log(StorageService.get("optimus_session"));
       if(JSON.parse(StorageService.get("optimus_session"))){
+        $rootScope.optimus_session = JSON.parse(StorageService.get("optimus_session"));
         $state.go("app.wish.wish-feed");
       }
       else{
         $state.go("app.auth.login");
       }
     });
-  })
+  });
 
   app.config(['$httpProvider','StorageServiceProvider',
     function ($httpProvider,StorageServiceProvider) {
@@ -43,11 +44,12 @@
 
             if(config.url.indexOf("http://localhost:1337") > -1 || config.url.indexOf("http://rocky-ravine-69769.herokuapp.com") > -1){
               // Check if the localstorage has optimus_session
+              var optimus_session = {};
               if(StorageServiceProvider.get("optimus_session")){
-                var optimus_session = JSON.parse(StorageServiceProvider.get("optimus_session"));
+                optimus_session = JSON.parse(StorageServiceProvider.get("optimus_session"));
               }
               else {
-                var optimus_session = null;
+                optimus_session = null;
               }
 
               // Check if the token exists. If so, add it to the request header

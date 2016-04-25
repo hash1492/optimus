@@ -23,10 +23,10 @@
             <i ng-class="{'blue-col': wish.is_upvoted}" class="icon ion-thumbsup"></i>
             <span ng-bind="wish.upvotes"></span>
           </a>
-          <a ng-disabled="wish.is_upvoted" class="tab-item" href="" ng-click="toggleWishDownvote(wish)">
+          <!-- <a ng-disabled="wish.is_upvoted" class="tab-item" href="" ng-click="toggleWishDownvote(wish)">
             <i ng-class="{'blue-col': wish.is_downvoted}" class="icon ion-thumbsdown"></i>
             <span ng-bind="wish.downvotes"></span>
-          </a>
+          </a> -->
           <a class="tab-item" href="" ng-click="toggleWishBookmark(wish)" >
             <i ng-class="{'blue-col': wish.is_bookmarked}" class="icon ion-bookmark"></i>
             Bookmark

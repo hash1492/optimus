@@ -4,7 +4,7 @@
   </div>
 </ion-header-bar>
 <ion-view>
-  <ion-content class="has-header" ng-if="wish">
+  <ion-content class="has-header">
     <div class="list">
 
       <div class="item item-avatar">
@@ -32,10 +32,10 @@
           <i ng-class="{'blue-col': wish.is_upvoted}" ng class="icon ion-thumbsup"></i>
           <span ng-bind="wish.upvotes"></span>
         </a>
-        <a ng-disabled="wish.is_upvoted" class="tab-item" href="" ng-click="toggleWishDownvote()">
+        <!-- <a ng-disabled="wish.is_upvoted" class="tab-item" href="" ng-click="toggleWishDownvote()">
           <i ng-class="{'blue-col': wish.is_downvoted}" class="icon ion-thumbsdown"></i>
           <span ng-bind="wish.downvotes"></span>
-        </a>
+        </a> -->
         <a class="tab-item" href="" ng-click="toggleWishBookmark()">
           <i ng-class="{'blue-col': wish.is_bookmarked}" class="icon ion-bookmark"></i>
           Bookmark
@@ -65,7 +65,7 @@
       <div class="card" ng-repeat="comment in comments">
         <div class="item item-avatar">
           <img src="/img/avatar.jpg">
-          <h2 ng-bind="comment.user_id | limitTo: 5">Pretty Hate Machine</h2>
+          <h2 ng-bind="comment.user.name">Pretty Hate Machine</h2>
           <p ng-bind="comment.comment">Nine Inch Nails</p>
           <p ng-bind="comment.createdAt | timeAgo">Nine Inch Nails</p>
         </div>
