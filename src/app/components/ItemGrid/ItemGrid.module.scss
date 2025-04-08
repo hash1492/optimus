@@ -1,0 +1,32 @@
+.root {
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    grid-auto-rows: 1fr;
+    width: 100vw;
+    height: 100vh;
+    padding: 5px;
+    .item {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        padding: 5px;
+        border-radius: 10px;
+        border: 1px solid #ddd;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+
+        &:focus {
+          outline: 3px solid yellow;
+          background-color: #0056b3;
+        }
+    }
+
+    img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+    }
+  }
+}
